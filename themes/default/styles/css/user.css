@@ -1,0 +1,81 @@
+@CHARSET "UTF-8";
+
+/* 个人中心 */
+.user { width:1170px; margin:0 auto; padding:40px 0; text-align:left; }
+.user_left { width:60%; }
+.user_right { width:30%; }
+.user_left .base_box { padding:20px; border:1px solid #DDDDDD; border-radius:5px; background-color:#F0F0F0;}
+.user_left .base_info { float:left; padding-left:20px;}
+.base_info li { line-height:33px; font-size:16px; font-weight:bold; }
+.base_info li label { width:100px; display:inline-block; font-weight:normal; }
+.base_info li span { font-size:12px;}
+.user_left .edit_btn { float:right; width:80px; height:32px; line-height:32px; background-color:#5CB85C; border-radius:3px; font-size:14px; color:#FFFFFF; text-align:center; }
+.user_left .fa_edit:before { content:"\f044"; }
+
+/* 用户设置 */
+.user_edit .tab_menu {  border-bottom:1px solid #DDDDDD;}
+.user_edit .tab_menu li { float:right; width:100px;  border:1px solid #DDDDDD; border-bottom:none; margin-left:4px; line-height:33px; font-size:14px; text-align:center; }
+.tab_menu li a { display:block; color:#428BCA; }
+.tab_menu li a:hover, .tab_menu li.active a { position:relative; bottom:-1px; background-color:#FFFFFF; color:#555555; }
+.tab_menu h2 { float:left; padding-left:20px; font-size:18px; line-height:33px;}
+.user_edit  h3 { background-color:#F7F7F7; padding-left:20px; font-size:16px; line-height:32px; }
+.user_edit #edit_form { padding:20px 0; }
+.user_edit .base_table { float:left; margin-left:5%; width:40%; }
+.base_table tr { line-height:33px; }
+.base_table th, .base_table td{ font-size:14px; padding-bottom:10px;}
+.base_table input { 
+	width:260px;
+	height:33px; 
+	line-height:33px;
+	background-color: #E5E6E6;
+    border-left: 1px solid #666666;
+    border-radius: 3px;
+    border-top: 1px solid #666666;
+    padding: 0 10px;
+}
+.base_table textarea { 
+	width:260px;
+	padding: 10px;
+	overflow-y:auto;
+	background-color: #E5E6E6;
+    border-left: 1px solid #666666;
+    border-radius: 3px;
+    border-top: 1px solid #666666;
+	min-width:260px; max-width:260px; 
+	min-height:80px; max-height:80px; height:80px; }
+.upload_avatar { float:right; width:50%;}
+.upload_avatar dt { width:100px; float:left;}
+.upload_avatar .upload_desc { float:left; padding-left:20px;}
+.upload_desc p { line-height:33px;}
+.upload_cut_box { width:300px; float:left;}	
+.upload_desc .upload_btn { float:left; width:80px; height:28px; position:relative; overflow:hidden; }
+.btn_text { display:block; height:28px; line-height:28px; border-radius: 4px; font-size: 14px;	background-color: #5CB85C;border-color: #4CAE4C;	color:#FFFFFF;	text-align:center;}
+.submit_cut { width:80px; height:28px; margin-top:10px; padding-left:20px; float:left;}
+.upload_btn .uploadify { position:absolute; top:0; opacity:0; cursor:pointer; filter:alpha(opacity=0);}
+.upload_avatar_status { display:none; float:left; margin-left:10px; padding-left:16px; position:relative; background:url(../images/ajax_loading.gif) no-repeat; bottom:-5px; }
+
+	
+#edit_form .submit {	
+	margin-top:20px;
+	margin-left:29%;
+	height:33px;
+	border-radius: 4px; 	
+	font-size: 14px; 
+	background-color: #5CB85C;
+	border-color: #4CAE4C; 
+	width:80px;
+	color:#FFFFFF;
+	text-align:center;
+	cursor:pointer;
+}
+
+/* 修改邮箱 */
+.base_table .send_btn, .base_table .send_txt{ width:100px; }
+.base_table .send_btn { margin-left:20px; border:1px solid #000000; cursor:pointer; color:#F0F0F0; background-color:#666666; }
+#send_msg { color:#F00; }
+.error_message { width:260px; }
+
+/* 重新激活账号 */
+.user_edit .base_active { width:100%; padding:20px;}
+.active_msg { float:left; background-color:#cccccc; line-height:34px; color:555555;}
+.active_btn { float:left;}

@@ -5,6 +5,9 @@
 $ENV_NAME = 'main';
 $ENV_NAME = 'dev_main';
 
+echo '222';
+exit;
+
 defined('APP_ENV') or define('APP_ENV', $ENV_NAME);
 
 // change the following paths if necessary

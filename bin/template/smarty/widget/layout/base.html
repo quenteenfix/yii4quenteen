@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html id="ng-app" ng-app="crowdtest">
+{* 预定义全局变量 *}
+{$widgets_css=array() scope="global"}
+{$widgets_js=array() scope="global"}
+{* 提前捕获body部分，已获取widget的js和css *}
+{capture name="main_body"}
+{block name="body"}{/block}
+{/capture}
+    <head>
+        <meta charset="utf-8">
+        <title>{block name="title"}百度众测平台{/block}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="keywords" content="乐园">
+        <meta name="description" content="乐园">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection">
+        <link rel="shortcut icon" href="http://www.baidu.com/favicon.ico">
+        {block name="css"}
+        <link href="{$BASE_URL}static/css/a.css" rel="stylesheet">
+        <link href="/static/css/mobile/layout.css" rel="stylesheet">
+        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+        <script src="/static/js/mobase.js"></script>
+        {/block}
+        {foreach $widgets_css as $css}{$css}{/foreach}
+    </head>
+    <body>
+    {$smarty.capture.main_body}
+    {block name="footer"}
+    <div class="footer">
+        <p>
+            <a href="{$BASE_URL}crowdtest/help/contact" target="_blank">问题反馈</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="http://test.baidu.com/about.html" target="_blank">关于众测</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="{$BASE_URL}crowdtest/help/friendSite" target="_blank">友情链接</a>
+        </p>
+        <p>
+            &copy;{$smarty.now|date_format:"%Y"} Baidu&nbsp;&nbsp;&nbsp;&nbsp;
+            <a target="_blank" href="http://www.miibeian.gov.cn">京ICP证030173号</a>
+        </p>
+	</div>
+    {/block}
+    {block name="js"}
+        {* 引入所需的js文件 *}
+        <!--[if lt IE 8]><script src="{$BASE_URL}crowdtest/js/json3.min.js"></script><![endif]-->
+        <!--[if lte IE 8]><script src="{$BASE_URL}crowdtest/js/IE9.js"></script><![endif]-->
+        <script src="{$BASE_URL}crowdtest/js/sea.js"></script>
+        <script src="{$BASE_URL}crowdtest/js/seajs_config.js?v=20141121"></script>
+        <script>
+            {* 老代码兼容 *}
+            var base_url = '{$BASE_URL}';
+            var base_url_module = '{$BASE_URL_MODULE}';
+            var base_dir_module = '{$BASE_DIR_MODULE}';
+            var yii_csrf_token = '{php} echo Yii::app()->request->csrfToken;{/php}';
+        </script>
+    {/block}
+    {foreach $widgets_js as $js}{$js}{/foreach}
+    {* 百度统计 *}
+    <script>var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fee067321f257787b74d66558f6cd5733' type='text/javascript'%3E%3C/script%3E"));</script>
+    </body>
+</html>
